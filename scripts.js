@@ -27,7 +27,7 @@ function displayEmployee(){
     let el = $('#employeeTable tr:last');
     // el.empty(); //empty element
     let i = employeeInfo.length - 1 
-    //let LastEmployee = employeeInfo[i];
+    // or let LastEmployee = employeeInfo[i];
         el.after(`<tr>
           <td>${employeeInfo[i].firstName}</td>
           <td>${employeeInfo[i].lastName}</td>
@@ -35,26 +35,24 @@ function displayEmployee(){
           <td>${employeeInfo[i].title}</td>
           <td>$ ${employeeInfo[i].salary}</td>
           <td><button class="remove">remove</button></td>
-        </tr>`);
-    
+        </tr>`); // retrieve from array
     calculateSalary(employeeInfo[i]);
-}
+} // displaying employee
 
 
 function calculateSalary(employeeInfo) {
-    employeeSalaryTotal = Number(employeeSalaryTotal) + Number(employeeInfo.salary)
-    
+    console.log('calculate salary');
+    employeeSalaryTotal = Number(employeeSalaryTotal) + Number(employeeInfo.salary) //calculate
     let elMonthlySalaryTotal = $('#monthlySalaryTotal')
     elMonthlySalaryTotal.empty();
     elMonthlySalaryTotal.append(employeeSalaryTotal);
-
     if (employeeSalaryTotal > 20000) {
-        elMonthlySalaryTotal.css("background-color", "red");
+        elMonthlySalaryTotal.css("background-color", "red"); // if salary is more than 20k, make background red
     }
-    
-}
+} //calculating salary total
 
 function removeEmployee() {
+    console.log('remove employee');
     let elButtonRow = $(this)
-    elButtonRow.closest('tr').remove()
-}
+    elButtonRow.closest('tr').remove() //remove closest to THIS line
+} //removes employee on click
