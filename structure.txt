@@ -1,0 +1,10 @@
+1) create form
+    -create object
+    - create textbox and button
+    -add objects to array
+2)populate table
+    -loop through object array
+    - create delete button
+3) calcuate salary
+    -loop through array
+    -add salary
